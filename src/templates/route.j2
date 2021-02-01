@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: $MY_ROUTE_NAME
+  namespace: {{ meta.namespace }}
+spec:
+  to:
+    kind: Service
+    name: $MY_CONTAINER_NAME
+    weight: 100
+  path: "/"
+  port:
+    targetPort: $MY_TARGET_PORT
+  wildcardPolicy: None

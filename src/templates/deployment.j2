@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $MY_CONTAINER_NAME
+  namespace: {{ meta.namespace }}
+  labels: 
+    app.kubernetes.io/name: $MY_CONTAINER_NAME
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app.kubernetes.io/name: $MY_CONTAINER_NAME
+  template:
+    metadata:
+      labels: 
+        app.kubernetes.io/name: $MY_CONTAINER_NAME
+    spec:
+      containers:
+      - name: $MY_CONTAINER_NAME
+        image: $MY_CONTAINER_REF
+        imagePullPolicy: Always
+        ports:
+          - protocol: TCP
+            containerPort: $MY_CONTAINER_PORT
+        env:
+        - name: $MY_ENV_VAR_NAME
+          value: "$MY_ENV_VAR_VALUE"

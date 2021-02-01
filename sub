@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+base=$1/roles
+name=`ls -1 $base`
+dir="$base/$name"
+shift
+while (( "$#" )); do
+  src=$1 
+  clipped=${1#"src"}
+  dest="$dir$clipped"
+  #echo "src=$src, dest=$dest"
+  envsubst < $src > $dest
+  shift
+done

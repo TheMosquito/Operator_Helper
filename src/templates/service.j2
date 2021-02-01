@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: $MY_CONTAINER_NAME
+  namespace: {{ meta.namespace }}
+  labels: 
+    app.kubernetes.io/name: $MY_CONTAINER_NAME
+spec:
+  type: NodePort
+  ports:
+    - port: $MY_CONTAINER_PORT
+      targetPort: $MY_TARGET_PORT
+      nodePort: $MY_NODE_PORT
+      protocol: TCP
+  selector:
+    app.kubernetes.io/name: $MY_CONTAINER_NAME

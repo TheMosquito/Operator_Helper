@@ -1,0 +1,17 @@
+# Edit this file and then "source" it for Open Horizon
+
+# Target hardware arch for Open Horizon (get this from `hzn architecture`)
+export ARCH=amd64
+
+# Credentials for your cluster node (you can make up almost anything here)
+export HZN_EXCHANGE_NODE_AUTH="MyNodeName:MyNodeToken123xyz"
+
+# Credentials (get these from your Open Horizon system administrator)
+export HZN_ORG_ID=telus
+export HZN_EXCHANGE_USER_AUTH="iamapikey:Aw9-wQqjTg-20YeBFVQFKMMJbt5UHHBGiGwjwfYS-lJ6"
+export HZN_EXCHANGE_URL=https://cp-console.ieam42-edge-8e873dd4c685acf6fd2f13f4cdfb05bb-0000.us-south.containers.appdomain.cloud/edge-exchange/v1
+export HZN_FSS_CSSURL=https://cp-console.ieam42-edge-8e873dd4c685acf6fd2f13f4cdfb05bb-0000.us-south.containers.appdomain.cloud/edge-css/
+
+# A name and version for the Open Horizon service
+export SERVICE_NAME=web-hello-operator
+export SERVICE_VERSION=1.0.0
