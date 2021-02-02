@@ -67,7 +67,7 @@ pattern:
 	@echo "You may now register nodes with \"make register\""
 
 register:
-	kubectl -n openhorizon-agent exec -i `kubectl -n openhorizon-agent get pods --selector=app=agent -o jsonpath={.items[*].metadata.name}` -- hzn register -u $(HZN_EXCHANGE_USER_AUTH) --pattern "$(HZN_ORG_ID)/pattern-$(SERVICE_NAME)-$(ARCH)"
+	kubectl -n openhorizon-agent exec -i `kubectl -n openhorizon-agent get pods --selector=app=agent -o jsonpath={.items[*].metadata.name}` -- hzn register -u $(HZN_EXCHANGE_USER_AUTH) -n $(HZN_EXCHANGE_NODE_AUTH) --pattern "$(HZN_ORG_ID)/pattern-$(SERVICE_NAME)-$(ARCH)"
 	@echo " "
 	@echo " "
 	@echo "Your Open Horizon pattern is now registered."
