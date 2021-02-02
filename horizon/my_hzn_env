@@ -7,7 +7,7 @@ export ARCH=amd64
 export HZN_EXCHANGE_NODE_AUTH="node:token"
 
 # Credentials (get these from your Open Horizon system administrator)
-export HZN_ORG_ID=telus
+export HZN_ORG_ID=
 export HZN_EXCHANGE_USER_AUTH="iamapikey:"
 export HZN_EXCHANGE_URL=
 export HZN_FSS_CSSURL=
