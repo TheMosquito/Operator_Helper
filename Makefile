@@ -72,9 +72,13 @@ register:
 	@echo " "
 	@echo "Your Open Horizon pattern is now registered."
 	@echo "You may unregister with \"make unregister\""
+	@echo "To watch the agreement-forming process, use \"make watch\""
 
 unregister:
 	kubectl -n openhorizon-agent exec -i `kubectl -n openhorizon-agent get pods --selector=app=agent -o jsonpath={.items[*].metadata.name}` -- hzn unregister -f
+
+watch:
+	watch -n 1 kubectl -n openhorizon-agent exec -i `kubectl -n openhorizon-agent get pods --selector=app=agent -o jsonpath={.items[*].metadata.name}` -- hzn agreement list
 
 clean: stop
 	-rm -rf $(MY_OPERATOR_NAME)

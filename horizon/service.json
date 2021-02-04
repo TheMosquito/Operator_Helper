@@ -1,24 +1,24 @@
 {
-    "org": "$HZN_ORG_ID",
-    "label": "$SERVICE_NAME for $ARCH",
-    "description": "",
-    "public": true,
-    "documentation": "",
-    "url": "$SERVICE_NAME",
-    "version": "$SERVICE_VERSION",
-    "arch": "$ARCH",
-    "sharable": "multiple",
-    "requiredServices": [],
-    "userInput": [
-        {
-            "name": "",
-            "label": "",
-            "type": "",
-            "defaultValue": ""
-        }
-    ],
-    "clusterDeployment": {
-        "operatorYamlArchive": "../operator.tar.gz"
+  "org": "$HZN_ORG_ID",
+  "label": "$SERVICE_NAME for $ARCH",
+  "description": "",
+  "public": true,
+  "documentation": "",
+  "url": "$SERVICE_NAME",
+  "version": "$SERVICE_VERSION",
+  "arch": "$ARCH",
+  "sharable": "multiple",
+  "requiredServices": [],
+  "userInput": [
+    {
+      "label": "An example variable",
+      "name": "MY_VAR",
+      "type": "string",
+      "defaultValue": "world"
     }
+  ],
+  "clusterDeployment": {
+    "operatorYamlArchive": "../operator.tar.gz"
+  }
 }
 
