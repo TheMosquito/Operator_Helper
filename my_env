@@ -24,17 +24,9 @@ export MY_RESOURCE_KIND=MyOperator
 # Name of the "route" for your HTTP/HTTPS service port
 export MY_ROUTE_NAME=my-route
 
-# Service "port" bound in your container, accessible from other cluster nodes
-export MY_CONTAINER_PORT=80
-
-# TargetPort for forwarding other pods of this same type
-export MY_TARGET_PORT=8000
-
-# NodePort, OCP static port (in 30000-32767) exposed on all cluster nodes. See:
-# https://docs.openshift.com/container-platform/3.6/dev_guide/expose_service/expose_internal_ip_nodeport.html
-export MY_NODE_PORT=30080
+# Service "port" bound in your container. OCP disallows root, so must be >1023.
+export MY_CONTAINER_PORT=8000
 
 # Env var for container configuration, will be set in container environment
 export MY_ENV_VAR_NAME=
 export MY_ENV_VAR_VALUE=
-
