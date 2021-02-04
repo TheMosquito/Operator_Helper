@@ -6,11 +6,9 @@ metadata:
   labels: 
     app.kubernetes.io/name: $MY_CONTAINER_NAME
 spec:
-  type: NodePort
   ports:
     - port: $MY_CONTAINER_PORT
-      targetPort: $MY_TARGET_PORT
-      nodePort: $MY_NODE_PORT
+      targetPort: $MY_CONTAINER_PORT
       protocol: TCP
   selector:
     app.kubernetes.io/name: $MY_CONTAINER_NAME

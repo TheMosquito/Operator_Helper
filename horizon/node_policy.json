@@ -1,0 +1,8 @@
+{
+  "properties": [
+    { "name": "property1",  "value": "value1" },
+    { "name": "property2",  "value": "value12 }
+  ],
+  "constraints": []
+}
+

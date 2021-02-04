@@ -1,0 +1,16 @@
+{
+  "label": "",
+  "description": "",
+  "service": {
+    "name": "$SERVICE_NAME",
+    "org": "HZN_ORG_ID",
+    "arch": "*",
+    "serviceVersions": [ { "version": "$SERVICE_VERSION", "priority":{} } ]
+  },
+  "properties": [],
+  "constraints": [
+    "property1 == value1"
+  ],
+  "userInput": []
+}
+
