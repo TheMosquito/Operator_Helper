@@ -25,7 +25,8 @@ build:
 	cat src/role_append >> "$(MY_OPERATOR_NAME)/deploy/role.yaml"
 	@echo " "
 	@echo " "
-	@echo "Your operator has been built and pushed to DockerHub. Now you can \"make test\"."
+	@echo "Your operator has been built and pushed to DockerHub."
+	@echo "You can now login to your cluster and run \"make test\" to manually verify it."
 
 test:
 	kubectl apply -f $(MY_OPERATOR_NAME)/deploy/crds/*_crd.yaml
@@ -37,7 +38,7 @@ test:
 	@echo " "
 	@echo " "
 	@echo "Your operator pod should now start running. Run \"make stop\" to stop it.."
-	@echo "If you wish to publish it with Open Horiizon, run \"make service\"."
+	@echo "If you wish to publish it with Open Horizon, run \"make service\"."
 
 stop:
 	-kubectl delete route $(MY_ROUTE_NAME)
